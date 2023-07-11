@@ -85,3 +85,11 @@ CREATE SEQUENCE if not exists enduser_seq
     START 10
     CACHE 1
     NO CYCLE;
+
+CREATE SEQUENCE if not exists enduser_role_seq
+    INCREMENT BY 50
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    START 10
+    CACHE 1
+    NO CYCLE;
