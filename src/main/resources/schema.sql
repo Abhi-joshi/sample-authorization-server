@@ -77,3 +77,11 @@ CREATE TABLE if not exists oauth2_registered_client (
                                                     token_settings varchar(2000) NOT NULL,
                                                     CONSTRAINT oauth2_registered_client_pkey PRIMARY KEY (id)
 );
+
+CREATE SEQUENCE if not exists enduser_seq
+    INCREMENT BY 50
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    START 10
+    CACHE 1
+    NO CYCLE;
