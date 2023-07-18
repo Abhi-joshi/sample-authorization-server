@@ -78,7 +78,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: test
     ports:
-      - "5432:5432"
+      - "8083:5432"
     networks:
       - auth-network
     volumes:
