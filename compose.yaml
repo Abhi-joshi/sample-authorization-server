@@ -12,7 +12,7 @@ services:
     depends_on:
       - postgres
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/test
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/pintailer
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       APP_ALLOWED-ORIGINS: http://localhost:4200
@@ -57,9 +57,9 @@ services:
       - postgres
       - sample-authorization-server
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/test
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_R2DBC_URL: r2dbc:postgresql://postgres:5432/pintailer
+      SPRING_R2DBC_USERNAME: postgres
+      SPRING_R2DBC_PASSWORD: postgres
       APP_AUTH-SERVER-URL: http://sample-authorization-server:9000
       APP_ALLOWED-ORIGINS: http://localhost:4200
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_OPAQUE_INTROSPECTION-CLIENT-ID: oidc-client
@@ -76,7 +76,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: test
+      POSTGRES_DB: pintailer
     ports:
       - "8083:5432"
     networks:
